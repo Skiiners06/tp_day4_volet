@@ -31,6 +31,7 @@ input[type=range]::-webkit-slider-thumb{
 
 .container{
     display:flex;
+    width:80%;
 }
 .fenetre{
     width:400px;

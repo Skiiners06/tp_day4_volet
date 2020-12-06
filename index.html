@@ -1,24 +1,64 @@
 <!DOCTYPE html>
 <html>
-    <title>Pilotage de volet</title>
+<title>Pilotage de volet</title>
+<head lang="fr">
 
-    
-    <body>
-        
-        
-        
-        <div class="container">
- 
-          <div class="range-slider">
-            <input type="range" orient="vertical" min="0" max="100" />
-          </div> 
-          
-          <p class="debug">DEBUG : <span class="volet-fermeture-valeur">VALEUR</span> </p>
-          
-        </div>
-                
-                
-        
-    </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+    <div class="range-slider">
+        <input type="range" orient="vertical" min="0" max="10" value="0" step="1" name="manette" id="range"
+               oninput="volet(this)" onchange="volet(this)"/>
+    </div>
+    <div class="fenetre">
+        <div class="store1"></div>
+    </div>
+
+
+</div>
+
+
+<script>
+    let range = document.getElementById("range")
+    let fenetre = document.getElementsByClassName("fenetre")[0]
+
+    console.log(range)
+    console.log(fenetre)
+
+
+    var Tabvolet=[]
+    function volet(volet){
+        for (let i=0; i<Tabvolet.length;i++){
+            console.log(i)
+            console.log(Tabvolet[i])
+            Tabvolet[i].remove()
+        }
+        for (let j=0; j<volet.value;j++){
+            let divLatte = document.createElement('div')
+            divLatte.className = 'stores'
+            Tabvolet.push(divLatte)
+            fenetre.appendChild(divLatte)
+
+            if(volet.value == 10){
+                divLatte.className = 'store1'
+            }
+        }
+
+
+
+
+    }
+
+
+</script>
+
+</body>
 </html>
 <!--La solution est sur https://codepen.io/jim005 -->

@@ -34,8 +34,8 @@ input[type=range]::-webkit-slider-thumb{
     width:80%;
 }
 .fenetre{
-    width:300px;
-    height:500px;
+    width:400px;
+    height:640px;
     background-color:lightsalmon;
 }
 

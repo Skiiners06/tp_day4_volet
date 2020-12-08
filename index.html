@@ -12,7 +12,7 @@
 <div class="container">
 
     <div class="range-slider">
-        <input type="range" orient="vertical" min="0" max="10" value="0" step="1" name="manette" id="range"
+        <input type="range" min="0" max="10" value="0" step="1" name="manette" id="range"
                oninput="volet(this)" onchange="volet(this)"/>
     </div>
     <div class="fenetre">
@@ -33,11 +33,9 @@
     var Tabvolet=[]
     function volet(volet){
         for (let i=0; i<Tabvolet.length;i++){
-            console.log(i)
-            console.log(Tabvolet[i])
             Tabvolet[i].remove()
         }
-        for (let j=0; j<volet.value;j++){
+        for (let j=1; j<volet.value;j++){
             let divLatte = document.createElement('div')
             divLatte.className = 'stores'
             Tabvolet.push(divLatte)
@@ -47,7 +45,13 @@
                 divLatte.className = 'store1'
             }
         }
+
+        console.log(document.getElementsByClassName('store1')[9])
+        document.getElementsByClassName('store1')[9].remove()
+
     }
+
+
 
 
 </script>
